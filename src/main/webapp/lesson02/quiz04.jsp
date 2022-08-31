@@ -20,7 +20,7 @@
 				<input type="text" class="form-control col-2 mr-2" name="number" placeholder="숫자를 입력하새요">
 				<select name="yes" class="form-control col-1 mr-2">
 					<option> * </option>
-					<option> - </option>
+					<option> / </option>
 					<option> + </option>
 					<option> - </option>
 				</select>
