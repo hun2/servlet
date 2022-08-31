@@ -51,22 +51,45 @@ list.add(map);
 			
 			
 			<%
-			
-				String text = request.getParameter("text");
 				
+				String text = request.getParameter("text");
+				String check = request.getParameter("check");
+				
+				for ( int i = 0; i< list.size(); i++) {
+					String company = (String)list.get(i).get("name");
+					double point = (double)list.get(i).get("point");
+					if ( !check.equals(null)) {
+						if (point > 4.0) {
+							if(list.get(i).get("menu").equals(text)) {
 			%>
 		
 			<tr>
 				<td><%=text %></td>
-				<td></td>
-				<td></td>
+				<td><%=company%></td>
+				<td><%=point %></td>
 			<td>
 		
-		
-		
 			<%
-			
+							}
+						}
+					} else if (check.equals(null)){
+						if(list.get(i).get("menu").equals(text)) {
+							
 			%>
+			<tr>
+				<td><%=text %></td>
+				<td><%=company%></td>
+				<td><%=point %></td>
+			<td>
+			<%
+							
+						}
+						
+					}
+				}
+			%>
+			
+			
 		</tbody>
 	
 	
