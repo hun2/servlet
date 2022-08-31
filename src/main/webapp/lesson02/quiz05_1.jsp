@@ -12,38 +12,53 @@
 
 </head>
 <body>
-	
+
+
 	<%
-	
-		String number = request.getParameter("number");
-		int num = Integer.valueOf(number);
-		String answer = request.getParameter("answer");
-		int ans = Integer.valueOf(answer);
-		String yes = request.getParameter("yes");
-		String result = null;
-		double numberResult = 0;
-		if ( yes.equals("*")) {
-			result = "X";
-			numberResult = num * ans;
-		} else if ( yes.equals("/")) {
-			
-			result = "/";
-			numberResult = (double)num / ans;
-		} else if ( yes.equals("+")) {
-			result = "+";
-			numberResult = num + ans;
-		} else {
-			result = "-";
-			numberResult = num - ans;
-		}
+		double number = Integer.valueOf(request.getParameter("number"));
+		
+		String[] length = request.getParameterValues("length");
+		
+		
 	
 	%>
-	
+
 	<div class="container">
-		<h2>계산결과</h2>
-		<h2><%=num %> <%=result %> <%= ans %> = <span class="text-info"> <%=numberResult %></span> 
+		<h2>길이 변환 결과 <br>
+		<%= number %> cm
+		</h2>
+		<hr>
+		
+		<h2>
+		<%
+		
+		if ( length != null ) {
+			
+			for (int i = 0; i < length.length; i++) {
+				
+				if ( length[i].contains("inch")) {
+					
+					 number = number / 2.54;
+					 out.println(number + "in <br>"); 
+				} else if ( length[i].contains("yard")) {
+					
+					number = number / 91.44;
+					 out.println(number + "yd <br>");
+				} else if ( length[i].contains("pit")) {
+					
+					number = number / 30.48;
+					 out.println(number + "ft <br>");
+				} else  if ( length[i].contains("meter")) {
+					
+					number = number / 100.0;
+					 out.println(number + "m <br>");
+				}
+				
+			}
+		}
+		
+		%>
 		</h2>
 	</div>
-	
 </body>
 </html>

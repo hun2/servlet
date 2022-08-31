@@ -12,38 +12,34 @@
 
 </head>
 <body>
-	
-	<%
-	
-		String number = request.getParameter("number");
-		int num = Integer.valueOf(number);
-		String answer = request.getParameter("answer");
-		int ans = Integer.valueOf(answer);
-		String yes = request.getParameter("yes");
-		String result = null;
-		double numberResult = 0;
-		if ( yes.equals("*")) {
-			result = "X";
-			numberResult = num * ans;
-		} else if ( yes.equals("/")) {
-			
-			result = "/";
-			numberResult = (double)num / ans;
-		} else if ( yes.equals("+")) {
-			result = "+";
-			numberResult = num + ans;
-		} else {
-			result = "-";
-			numberResult = num - ans;
-		}
-	
-	%>
-	
+
 	<div class="container">
-		<h2>계산결과</h2>
-		<h2><%=num %> <%=result %> <%= ans %> = <span class="text-info"> <%=numberResult %></span> 
-		</h2>
-	</div>
 	
+		<h2>길이 변환</h2>
+		<form method="post" action="/lesson02/quiz05_1.jsp" >
+		
+			<div class="d-flex align-items-end">
+				<input type="text" name="number" placeholder="숫자를 입력하세요"> cm
+			</div>
+			
+			<label for="inch">인치</label>
+			<input type="checkbox" id="inch" name="length" value="inch">
+			<label for="yard">야드</label>
+			<input type="checkbox" id="yard" name="length" value="yard">
+			<label for="pit">피트</label>
+			<input type="checkbox" id="pit" name="length" value="pit">
+			<label for="meter">미터</label>
+			<input type="checkbox" id="meter" name="length" value="meter"><br>
+			
+			<button type="submit" class="btn btn-success"> 변환하기</button>
+			
+			
+			
+			
+		</form>
+	
+	</div>
+
+
 </body>
 </html>

@@ -1,3 +1,5 @@
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,38 +14,54 @@
 
 </head>
 <body>
+
+<%
+
+List<String> goodsList = Arrays.asList(new String[]{ 
+				    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
+				});
+				
+%>
+
 	
-	<%
 	
-		String number = request.getParameter("number");
-		int num = Integer.valueOf(number);
-		String answer = request.getParameter("answer");
-		int ans = Integer.valueOf(answer);
-		String yes = request.getParameter("yes");
-		String result = null;
-		double numberResult = 0;
-		if ( yes.equals("*")) {
-			result = "X";
-			numberResult = num * ans;
-		} else if ( yes.equals("/")) {
-			
-			result = "/";
-			numberResult = (double)num / ans;
-		} else if ( yes.equals("+")) {
-			result = "+";
-			numberResult = num + ans;
-		} else {
-			result = "-";
-			numberResult = num - ans;
-		}
-	
-	%>
 	
 	<div class="container">
-		<h2>계산결과</h2>
-		<h2><%=num %> <%=result %> <%= ans %> = <span class="text-info"> <%=numberResult %></span> 
-		</h2>
+		<h1 class="text-center">장보기 목록</h1>
+		<table class="table text-center">
+			<thead>
+				<tr>
+					<th> 번호</th>
+					<th> 품목 </th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+					int sum = 0;
+					for ( int i = 0; i< goodsList.size(); i++ ) {
+						
+						sum++;
+					
+				
+				
+				%>			
+				<tr>
+					<td><%=sum %> </td>
+					<td><%= goodsList.get(i) %> </td>
+									
+				</tr>
+				
+				
+				<%
+				
+					}
+				
+				%>
+			</tbody>
+		
+		
+		</table>
+		
 	</div>
-	
 </body>
 </html>
