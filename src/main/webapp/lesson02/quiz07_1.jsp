@@ -96,7 +96,7 @@ list.add(map);
 				<td><%=text %></td>
 				<td><%=company%></td>
 				<td><%=point %></td>
-			<td>
+			<tr>
 		
 			<%
 							}
