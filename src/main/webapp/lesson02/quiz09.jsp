@@ -24,6 +24,7 @@
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 yy일");
 	
 	int number = 100;
+	int result = 100;
 	out.print(sdf.format(today.getTime()));
 		for ( int i = 1; i<=10; i++) {
 			
@@ -36,11 +37,11 @@
 	%>
 	
 		<h1>
-		<%= number  %> 일 : <span class="text-danger"> <%=sdf.format(today.getTime()) %>  </span><br>
+		<%= result  %> 일 : <span class="text-danger"> <%=sdf.format(today.getTime()) %>  </span><br>
 		
 		</h1>
 	<%
-			number = number + 100;
+			result += 100;
 		}
 	%>
 
