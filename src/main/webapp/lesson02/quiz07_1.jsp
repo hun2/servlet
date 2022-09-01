@@ -58,7 +58,7 @@ list.add(map);
 				for ( int i = 0; i< list.size(); i++) {
 					String company = (String)list.get(i).get("name");
 					double point = (double)list.get(i).get("point");
-					if ( !check.equals(null)) {
+					if ( "on".equals(check)) {
 						if (point > 4.0) {
 							if(list.get(i).get("menu").equals(text)) {
 			%>
@@ -72,7 +72,7 @@ list.add(map);
 			<%
 							}
 						}
-					} else if (check.equals(null)){
+					} else {
 						if(list.get(i).get("menu").equals(text)) {
 							
 			%>
