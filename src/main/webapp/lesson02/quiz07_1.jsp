@@ -57,7 +57,7 @@ list.add(map);
 			//
 			//	for (int i = 0; i < list.size(); i++) {
 			//		double point = (double) list.get(i).get("point");
-			//		if (list.get(i).get("menu").equals(text) || ("on".equals(check) && point < 4.0)) {
+			//		if (!list.get(i).get("menu").equals(text) || ("on".equals(check) && point < 4.0)) {
 			//			continue;
 			//		}
 			//		String company = (String) list.get(i).get("name");
