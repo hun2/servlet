@@ -49,7 +49,36 @@ list.add(map);
 		<tbody>
 		
 			
+			<%-- 방법 1번 코드 간결화--%>
 			
+			<%
+			//	String text = request.getParameter("text");
+			//	String check = request.getParameter("check");
+			//
+			//	for (int i = 0; i < list.size(); i++) {
+			//		double point = (double) list.get(i).get("point");
+			//		if (list.get(i).get("menu").equals(text) || ("on".equals(check) && point < 4.0)) {
+			//			continue;
+			//		}
+			//		String company = (String) list.get(i).get("name");
+			%>
+			
+			<%--  
+				<tr>
+					<td><%=text%></td>
+					<td><%=company%></td>
+					<td><%=point%></td>
+				</tr>
+			 --%>
+			<%
+			//	}
+			%>
+			
+			
+			
+				
+			
+			<%-- 방법 2번 생각나는 대로 한 거 --%>
 			<%
 				
 				String text = request.getParameter("text");
