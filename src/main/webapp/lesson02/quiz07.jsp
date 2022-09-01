@@ -16,9 +16,9 @@
 		<h1>메뉴 검색</h1>
 		
 		<form method="post" action="/lesson02/quiz07_1.jsp" >
-			<div class="d-flex">
+			<div class="d-flex align-items-center">
 			
-				<input type="text" name="text" placeholder="메뉴를 입력하세요" class="mr-3">
+				<input type="text" name="text" placeholder="메뉴를 입력하세요" class="form-control col-3 mr-3">
 				<input type="checkbox" name="check" id="check" class="mr-3">
 				<label for="check" class="mr-3">
 					4점 이하 제외
