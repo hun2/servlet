@@ -21,7 +21,7 @@
 	<%
 	Calendar today =  Calendar.getInstance();
 	Calendar today2 = Calendar.getInstance();
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 yy일");
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
 	
 	int number = 100;
 	int result = 100;
@@ -29,7 +29,7 @@
 		for ( int i = 1; i<=10; i++) {
 			
 
-			today.add(Calendar.DATE, number);
+			today.add(Calendar.DATE, number-1);
 			
 			
 		
