@@ -154,7 +154,7 @@ list.add(map);
 			String name = list.get(i).get("name");
 			String category = list.get(i).get("category");
 
-			if (check.equals(category)) {
+			if (category.equals(check)) {
 		%>
 		<tr>
 			<td><%=ch%></td>
