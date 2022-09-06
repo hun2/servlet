@@ -10,9 +10,11 @@
 			</h2>
 		</div>
 	<form method="get" action="/lesson03/quiz02/info_template.jsp">
+		<div class="input-group">
+			<input type="text" class="form-control col-10" name="search" value="<%= request.getParameter("search") %>">
+			<button type="submit" class="btn btn-primary text-white">검색</button>
+		</div>
 		
-		<input type="text" class="form-control col-3" name="text">
-		<button type="submit" class="btn btn-primary text-white">검색</button>
 		
 	</form>
 </header>
