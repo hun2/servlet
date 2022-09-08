@@ -17,10 +17,14 @@
 	
 	
 	<form method="post" action="/lesson04/quiz02_insert">
-		<div><b>사이트 명:</b></div>
-		<input type="text" class="form-control col-3" name="name">
-		<div class="mt-2"><b>사이트 주소:</b></div>
-		<input type="text" class="form-control col-5" name="url"> <br>
+		<label for="name">
+		<b>사이트 명:</b>
+		</label>
+		<input type="text" class="form-control col-3" name="name" id="name">
+		<label for="url" class="mt-4">
+		<b>사이트 주소:</b>
+		</label>
+		<input type="text" class="form-control col-5" name="url" id="url"> <br>
 		<button type="submit" class="btn btn-success">추가</button>
 	</form>	
 </body>

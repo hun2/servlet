@@ -18,7 +18,7 @@ public class DeleteQuiz02 extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		
-		//삭제할 쿼리 받기
+		//삭제할 파라미터 받기
 		int id = Integer.valueOf(request.getParameter("id"));
 		
 		//db 연결

@@ -1,3 +1,5 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.test.common.MysqlService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,6 +23,25 @@ header { background-color: #fd7e14;  font-weight: bold;
 
 </head>
 <body>
+<%
+
+//1. 디비연결
+MysqlService ms = MysqlService.getInstance();
+ms.connect();
+
+
+
+//2.select db
+
+String selectQuery = "select * from seller";
+ResultSet result = ms.select(selectQuery);
+
+
+%>
+
+
+
+
 	<div class="container">
 	
 		<header>
@@ -40,13 +61,64 @@ header { background-color: #fd7e14;  font-weight: bold;
 			
 	
 		<section>
-		
+			
+			<p>
+				<h1>물건 올리기</h1>			
+			</p>
+			
+			<form method="post" action="/lesson04/quiz03_insert">
+				<div class="d-flex justify-content-between">
+					<select class="form-select col-3" name="id">
+						<option selected>-아이디 선택-</option>
+						  	<%
+						  
+						  		while(result.next()) {
+						  		
+						  	%>
+						  
+						 	<option value="<%=result.getInt("id") %>" ><%=result.getString("nickname") %></option>
+						 
+						  
+						  	<%
+						  
+						 	 	}
+						  	%>
+					</select>
+					
+					<input type="text" class="form-control col-3 ml-4" placeholder="제목" name="title">
+					<div class="input-group col-3 ml-4">
+					  <input type="text" class="form-control " placeholder="가격" name="price">
+					  <span class="input-group-text">원</span>
+					</div>
+					
+				</div>
+				
+				<textarea rows="5" cols="150" class="mt-4 col-12" placeholder="설명을 입력하세요" name="description"></textarea>
+				
+				<div class="input-group mt-4">
+				  <span class="input-group-text">이미지 url</span>
+				  <input type="text" class="form-control" name="pictureUrl">
+				</div>
+				
+				<button type="submit" class="btn col-12 mt-3">저장</button>
+			</form>
 		</section>
 		
 		
 		<footer>
-		
+			<div class="text-center mt-5">
+				Copyright © kihunzzang 2022
+			</div>
 		</footer>
 	</div>
+	
+	
+	
+<%
+
+//디비 해제
+ms.disconnect();
+
+%>
 </body>
 </html>

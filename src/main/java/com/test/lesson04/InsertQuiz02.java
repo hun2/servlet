@@ -17,10 +17,11 @@ public class InsertQuiz02 extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		
+		
+		//request param을 꺼낸다.
 		String name = request.getParameter("name");
 		String url = request.getParameter("url");
 		
-		//해야할일
 		// db 연결
 		
 		MysqlService ms = MysqlService.getInstance();
